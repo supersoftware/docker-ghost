@@ -11,7 +11,7 @@ cd /var/lib/ghost/content/themes
 curl -SLO https://github.com/supersoftware/ghostium/archive/v2.4.1-custom.zip
 unzip v2.4.1-custom.zip
 mv ghostium-2.4.1-custom ghostium-custom
-rm v2.4.0-custom.zip
+rm v2.4.1-custom.zip
 cd /var/lib/ghost
 
 # execute the default entrypoint
