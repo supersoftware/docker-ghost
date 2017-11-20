@@ -6,11 +6,13 @@ mkdir -p content/adapters/storage
 cp -pr node_modules/ghost-storage-adapter-s3 content/adapters/storage/s3
 
 # custom theme
-mkdir -p /var/lib/ghost/content/themes/ghostium-custom
-curl -SLO https://github.com/supersoftware/ghostium/archive/v2.4.0-custom.tar.gz
-tar xzf v2.4.0-custom.tar.gz -C /var/lib/ghost/content/themes
-mv /var/lib/ghost/content/themes/ghostium-2.4.0-custom /var/lib/ghost/content/themes/ghostium-custom
-rm v2.4.0-custom.tar.gz
+mkdir -p /var/lib/ghost/content/themes
+cd /var/lib/ghost/content/themes
+curl -SLO https://github.com/supersoftware/ghostium/archive/v2.4.0-custom.zip
+unzip v2.4.0-custom.zip
+mv ghostium-2.4.0-custom ghostium-custom
+rm v2.4.0-custom.zip
+cd /var/lib/ghost
 
 # execute the default entrypoint
 docker-entrypoint.sh "$@"
