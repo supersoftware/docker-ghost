@@ -1,4 +1,4 @@
-FROM ghost:1-alpine
+FROM ghost:1.18-alpine
 
 # install custom theme
 RUN apk add --no-cache curl
